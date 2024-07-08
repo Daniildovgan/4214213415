@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+
+void deleteRow(std::vector<std::vector<int>>& arr, int rowToDelete) {
+    arr.erase(arr.begin() + rowToDelete);
+}
+
+int main() {
+    std::vector<std::vector<int>> array2D = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int rowToDelete = 1; 
+
+    deleteRow(array2D, rowToDelete);
+
+    for (const auto& row : array2D) {
+        for (int num : row) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
