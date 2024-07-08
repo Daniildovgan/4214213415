@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+
+void addRowToPosition(std::vector<std::vector<int>>& arr, int position, std::vector<int>& row) {
+    arr.insert(arr.begin() + position, row);
+}
+
+int main() {
+    std::vector<std::vector<int>> array2D = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    std::vector<int> newRow = {10, 11, 12};
+    int position = 1; 
+
+    addRowToPosition(array2D, position, newRow);
+
+    for (const auto& row : array2D) {
+        for (int num : row) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
