@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+
+void deleteColumn(std::vector<std::vector<int>>& arr, int columnToDelete) {
+    for (int i = 0; i < arr.size(); ++i) {
+        arr[i].erase(arr[i].begin() + columnToDelete);
+    }
+}
+
+int main() {
+    std::vector<std::vector<int>> array2D = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int columnToDelete = 1;
+
+    deleteColumn(array2D, columnToDelete);
+
+    for (const auto& row : array2D) {
+        for (int num : row) {
+            std::cout << num << " ";
+        }
+        std::cout << std::endl;
+    }
+
+    return 0;
+}
